@@ -1,0 +1,31 @@
+TAP version 14
+# Subtest: Database Connection
+PRAGMA foreign_keys = ON
+    # Subtest: should connect to database
+        ok 1 - Database connection should be established
+        ok 2 - Should be marked as connected
+        1..2
+    ok 1 - should connect to database # time=4.68ms
+    
+PRAGMA foreign_keys = ON
+    # Subtest: should close database connection
+        ok 1 - Should be marked as disconnected
+        1..1
+    ok 2 - should close database connection # time=0.507ms
+    
+    1..2
+ok 1 - Database Connection # time=12.707ms
+
+PRAGMA foreign_keys = ON
+# Subtest: Repository Factory
+    # Subtest: should create repository instances
+        ok 1 - Users repository should be created
+        ok 2 - Games repository should be created
+        ok 3 - Tournaments repository should be created
+        1..3
+    ok 1 - should create repository instances # time=0.638ms
+    
+    1..1
+ok 2 - Repository Factory # time=6.707ms
+
+1..2

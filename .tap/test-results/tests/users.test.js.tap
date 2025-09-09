@@ -1,0 +1,692 @@
+TAP version 14
+# Subtest: Users Repository
+PRAGMA foreign_keys = ON
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+SELECT version, name FROM migrations ORDER BY version
+Found 1 migration files
+Already applied: 0 migrations
+Running 1 pending migrations...
+BEGIN
+→ Running migration 1: initial_schema
+CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE games (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        player1_id INTEGER NOT NULL,
+        player2_id INTEGER NOT NULL,
+        player1_score INTEGER DEFAULT 0,
+        player2_score INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'active', 'completed', 'cancelled')),
+        started_at DATETIME,
+        completed_at DATETIME,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (player1_id) REFERENCES users (id),
+        FOREIGN KEY (player2_id) REFERENCES users (id)
+      )
+    
+CREATE TABLE tournaments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        status TEXT DEFAULT 'registration' CHECK (status IN ('registration', 'active', 'completed', 'cancelled')),
+        max_players INTEGER DEFAULT 8,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        started_at DATETIME,
+        completed_at DATETIME
+      )
+    
+CREATE TABLE tournament_players (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        alias TEXT NOT NULL,
+        joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        eliminated_at DATETIME,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (user_id) REFERENCES users (id),
+        UNIQUE(tournament_id, user_id),
+        UNIQUE(tournament_id, alias)
+      )
+    
+CREATE TABLE tournament_matches (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        round INTEGER NOT NULL,
+        match_order INTEGER NOT NULL,
+        player1_id INTEGER,
+        player2_id INTEGER,
+        game_id INTEGER,
+        winner_id INTEGER,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (player1_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (player2_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (game_id) REFERENCES games (id),
+        FOREIGN KEY (winner_id) REFERENCES tournament_players (id)
+      )
+    
+CREATE INDEX idx_games_player1 ON games (player1_id);
+CREATE INDEX idx_games_player2 ON games (player2_id);
+CREATE INDEX idx_games_status ON games (status);
+CREATE INDEX idx_tournament_players_tournament ON tournament_players (tournament_id);
+CREATE INDEX idx_tournament_matches_tournament ON tournament_matches (tournament_id);
+CREATE INDEX idx_users_username ON users (username);
+CREATE INDEX idx_users_email ON users (email);
+CREATE TRIGGER update_users_updated_at
+      AFTER UPDATE ON users
+      FOR EACH ROW
+      BEGIN
+        UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+      END;
+✓ Initial schema created successfully
+
+            INSERT INTO migrations (version, name) VALUES (1.0, 'initial_schema')
+          
+✓ Migration 1 completed
+COMMIT
+✓ All migrations completed successfully
+
+      INSERT INTO users (username, email, password_hash)
+      VALUES ('testuser', 'test@example.com', '$2b$10$nof6rJifTTFf7xntFTaBCOmYK'/*+28 bytes*/)
+    
+SELECT * FROM users WHERE id = 1.0
+    # Subtest: should create a user with hashed password
+        ok 1 - User should have an ID
+        ok 2 - Username should match
+        ok 3 - Email should match
+        ok 4 - Password should be hashed
+        ok 5 - Password should not be stored in plain text
+        1..5
+    ok 1 - should create a user with hashed password # time=54.05ms
+    
+PRAGMA foreign_keys = ON
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+SELECT version, name FROM migrations ORDER BY version
+Found 1 migration files
+Already applied: 0 migrations
+Running 1 pending migrations...
+BEGIN
+→ Running migration 1: initial_schema
+CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE games (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        player1_id INTEGER NOT NULL,
+        player2_id INTEGER NOT NULL,
+        player1_score INTEGER DEFAULT 0,
+        player2_score INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'active', 'completed', 'cancelled')),
+        started_at DATETIME,
+        completed_at DATETIME,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (player1_id) REFERENCES users (id),
+        FOREIGN KEY (player2_id) REFERENCES users (id)
+      )
+    
+CREATE TABLE tournaments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        status TEXT DEFAULT 'registration' CHECK (status IN ('registration', 'active', 'completed', 'cancelled')),
+        max_players INTEGER DEFAULT 8,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        started_at DATETIME,
+        completed_at DATETIME
+      )
+    
+CREATE TABLE tournament_players (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        alias TEXT NOT NULL,
+        joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        eliminated_at DATETIME,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (user_id) REFERENCES users (id),
+        UNIQUE(tournament_id, user_id),
+        UNIQUE(tournament_id, alias)
+      )
+    
+CREATE TABLE tournament_matches (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        round INTEGER NOT NULL,
+        match_order INTEGER NOT NULL,
+        player1_id INTEGER,
+        player2_id INTEGER,
+        game_id INTEGER,
+        winner_id INTEGER,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (player1_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (player2_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (game_id) REFERENCES games (id),
+        FOREIGN KEY (winner_id) REFERENCES tournament_players (id)
+      )
+    
+CREATE INDEX idx_games_player1 ON games (player1_id);
+CREATE INDEX idx_games_player2 ON games (player2_id);
+CREATE INDEX idx_games_status ON games (status);
+CREATE INDEX idx_tournament_players_tournament ON tournament_players (tournament_id);
+CREATE INDEX idx_tournament_matches_tournament ON tournament_matches (tournament_id);
+CREATE INDEX idx_users_username ON users (username);
+CREATE INDEX idx_users_email ON users (email);
+CREATE TRIGGER update_users_updated_at
+      AFTER UPDATE ON users
+      FOR EACH ROW
+      BEGIN
+        UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+      END;
+✓ Initial schema created successfully
+
+            INSERT INTO migrations (version, name) VALUES (1.0, 'initial_schema')
+          
+✓ Migration 1 completed
+COMMIT
+✓ All migrations completed successfully
+
+      INSERT INTO users (username, email, password_hash)
+      VALUES ('findtest', 'find@example.com', '$2b$10$o7dqyDi7rDIdKVpD/zSJqOkhz'/*+28 bytes*/)
+    
+SELECT * FROM users WHERE id = 1.0
+SELECT * FROM users WHERE username = 'findtest'
+    # Subtest: should find user by username
+        ok 1 - User should be found
+        ok 2 - Username should match
+        1..2
+    ok 2 - should find user by username # time=46.795ms
+    
+PRAGMA foreign_keys = ON
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+SELECT version, name FROM migrations ORDER BY version
+Found 1 migration files
+Already applied: 0 migrations
+Running 1 pending migrations...
+BEGIN
+→ Running migration 1: initial_schema
+CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE games (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        player1_id INTEGER NOT NULL,
+        player2_id INTEGER NOT NULL,
+        player1_score INTEGER DEFAULT 0,
+        player2_score INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'active', 'completed', 'cancelled')),
+        started_at DATETIME,
+        completed_at DATETIME,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (player1_id) REFERENCES users (id),
+        FOREIGN KEY (player2_id) REFERENCES users (id)
+      )
+    
+CREATE TABLE tournaments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        status TEXT DEFAULT 'registration' CHECK (status IN ('registration', 'active', 'completed', 'cancelled')),
+        max_players INTEGER DEFAULT 8,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        started_at DATETIME,
+        completed_at DATETIME
+      )
+    
+CREATE TABLE tournament_players (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        alias TEXT NOT NULL,
+        joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        eliminated_at DATETIME,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (user_id) REFERENCES users (id),
+        UNIQUE(tournament_id, user_id),
+        UNIQUE(tournament_id, alias)
+      )
+    
+CREATE TABLE tournament_matches (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        round INTEGER NOT NULL,
+        match_order INTEGER NOT NULL,
+        player1_id INTEGER,
+        player2_id INTEGER,
+        game_id INTEGER,
+        winner_id INTEGER,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (player1_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (player2_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (game_id) REFERENCES games (id),
+        FOREIGN KEY (winner_id) REFERENCES tournament_players (id)
+      )
+    
+CREATE INDEX idx_games_player1 ON games (player1_id);
+CREATE INDEX idx_games_player2 ON games (player2_id);
+CREATE INDEX idx_games_status ON games (status);
+CREATE INDEX idx_tournament_players_tournament ON tournament_players (tournament_id);
+CREATE INDEX idx_tournament_matches_tournament ON tournament_matches (tournament_id);
+CREATE INDEX idx_users_username ON users (username);
+CREATE INDEX idx_users_email ON users (email);
+CREATE TRIGGER update_users_updated_at
+      AFTER UPDATE ON users
+      FOR EACH ROW
+      BEGIN
+        UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+      END;
+✓ Initial schema created successfully
+
+            INSERT INTO migrations (version, name) VALUES (1.0, 'initial_schema')
+          
+✓ Migration 1 completed
+COMMIT
+✓ All migrations completed successfully
+
+      INSERT INTO users (username, email, password_hash)
+      VALUES ('emailtest', 'email@example.com', '$2b$10$Tw0aRdflz8Ja10fUr9n2IOQJQ'/*+28 bytes*/)
+    
+SELECT * FROM users WHERE id = 1.0
+SELECT * FROM users WHERE email = 'email@example.com'
+    # Subtest: should find user by email
+        ok 1 - User should be found
+        ok 2 - Email should match
+        1..2
+    ok 3 - should find user by email # time=45.108ms
+    
+PRAGMA foreign_keys = ON
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+SELECT version, name FROM migrations ORDER BY version
+Found 1 migration files
+Already applied: 0 migrations
+Running 1 pending migrations...
+BEGIN
+→ Running migration 1: initial_schema
+CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE games (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        player1_id INTEGER NOT NULL,
+        player2_id INTEGER NOT NULL,
+        player1_score INTEGER DEFAULT 0,
+        player2_score INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'active', 'completed', 'cancelled')),
+        started_at DATETIME,
+        completed_at DATETIME,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (player1_id) REFERENCES users (id),
+        FOREIGN KEY (player2_id) REFERENCES users (id)
+      )
+    
+CREATE TABLE tournaments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        status TEXT DEFAULT 'registration' CHECK (status IN ('registration', 'active', 'completed', 'cancelled')),
+        max_players INTEGER DEFAULT 8,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        started_at DATETIME,
+        completed_at DATETIME
+      )
+    
+CREATE TABLE tournament_players (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        alias TEXT NOT NULL,
+        joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        eliminated_at DATETIME,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (user_id) REFERENCES users (id),
+        UNIQUE(tournament_id, user_id),
+        UNIQUE(tournament_id, alias)
+      )
+    
+CREATE TABLE tournament_matches (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        round INTEGER NOT NULL,
+        match_order INTEGER NOT NULL,
+        player1_id INTEGER,
+        player2_id INTEGER,
+        game_id INTEGER,
+        winner_id INTEGER,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (player1_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (player2_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (game_id) REFERENCES games (id),
+        FOREIGN KEY (winner_id) REFERENCES tournament_players (id)
+      )
+    
+CREATE INDEX idx_games_player1 ON games (player1_id);
+CREATE INDEX idx_games_player2 ON games (player2_id);
+CREATE INDEX idx_games_status ON games (status);
+CREATE INDEX idx_tournament_players_tournament ON tournament_players (tournament_id);
+CREATE INDEX idx_tournament_matches_tournament ON tournament_matches (tournament_id);
+CREATE INDEX idx_users_username ON users (username);
+CREATE INDEX idx_users_email ON users (email);
+CREATE TRIGGER update_users_updated_at
+      AFTER UPDATE ON users
+      FOR EACH ROW
+      BEGIN
+        UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+      END;
+✓ Initial schema created successfully
+
+            INSERT INTO migrations (version, name) VALUES (1.0, 'initial_schema')
+          
+✓ Migration 1 completed
+COMMIT
+✓ All migrations completed successfully
+
+      INSERT INTO users (username, email, password_hash)
+      VALUES ('authtest', 'auth@example.com', '$2b$10$EFHSmg1t2rlz1PGAe/C9YeHyj'/*+28 bytes*/)
+    
+SELECT * FROM users WHERE id = 1.0
+SELECT * FROM users WHERE username = 'authtest'
+    # Subtest: should authenticate user with correct password
+        ok 1 - User should be authenticated
+        ok 2 - Username should match
+        1..2
+    ok 4 - should authenticate user with correct password # time=88.288ms
+    
+PRAGMA foreign_keys = ON
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+SELECT version, name FROM migrations ORDER BY version
+Found 1 migration files
+Already applied: 0 migrations
+Running 1 pending migrations...
+BEGIN
+→ Running migration 1: initial_schema
+CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE games (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        player1_id INTEGER NOT NULL,
+        player2_id INTEGER NOT NULL,
+        player1_score INTEGER DEFAULT 0,
+        player2_score INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'active', 'completed', 'cancelled')),
+        started_at DATETIME,
+        completed_at DATETIME,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (player1_id) REFERENCES users (id),
+        FOREIGN KEY (player2_id) REFERENCES users (id)
+      )
+    
+CREATE TABLE tournaments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        status TEXT DEFAULT 'registration' CHECK (status IN ('registration', 'active', 'completed', 'cancelled')),
+        max_players INTEGER DEFAULT 8,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        started_at DATETIME,
+        completed_at DATETIME
+      )
+    
+CREATE TABLE tournament_players (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        alias TEXT NOT NULL,
+        joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        eliminated_at DATETIME,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (user_id) REFERENCES users (id),
+        UNIQUE(tournament_id, user_id),
+        UNIQUE(tournament_id, alias)
+      )
+    
+CREATE TABLE tournament_matches (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        round INTEGER NOT NULL,
+        match_order INTEGER NOT NULL,
+        player1_id INTEGER,
+        player2_id INTEGER,
+        game_id INTEGER,
+        winner_id INTEGER,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (player1_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (player2_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (game_id) REFERENCES games (id),
+        FOREIGN KEY (winner_id) REFERENCES tournament_players (id)
+      )
+    
+CREATE INDEX idx_games_player1 ON games (player1_id);
+CREATE INDEX idx_games_player2 ON games (player2_id);
+CREATE INDEX idx_games_status ON games (status);
+CREATE INDEX idx_tournament_players_tournament ON tournament_players (tournament_id);
+CREATE INDEX idx_tournament_matches_tournament ON tournament_matches (tournament_id);
+CREATE INDEX idx_users_username ON users (username);
+CREATE INDEX idx_users_email ON users (email);
+CREATE TRIGGER update_users_updated_at
+      AFTER UPDATE ON users
+      FOR EACH ROW
+      BEGIN
+        UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+      END;
+✓ Initial schema created successfully
+
+            INSERT INTO migrations (version, name) VALUES (1.0, 'initial_schema')
+          
+✓ Migration 1 completed
+COMMIT
+✓ All migrations completed successfully
+
+      INSERT INTO users (username, email, password_hash)
+      VALUES ('authfailtest', 'authfail@example.com', '$2b$10$sQ8zuK549irnobqtzCSp/ej7N'/*+28 bytes*/)
+    
+SELECT * FROM users WHERE id = 1.0
+SELECT * FROM users WHERE username = 'authfailtest'
+    # Subtest: should not authenticate user with wrong password
+        ok 1 - User should not be authenticated
+        1..1
+    ok 5 - should not authenticate user with wrong password # time=87.985ms
+    
+PRAGMA foreign_keys = ON
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE IF NOT EXISTS migrations (
+        version INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        applied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+SELECT version, name FROM migrations ORDER BY version
+Found 1 migration files
+Already applied: 0 migrations
+Running 1 pending migrations...
+BEGIN
+→ Running migration 1: initial_schema
+CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+      )
+    
+CREATE TABLE games (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        player1_id INTEGER NOT NULL,
+        player2_id INTEGER NOT NULL,
+        player1_score INTEGER DEFAULT 0,
+        player2_score INTEGER DEFAULT 0,
+        status TEXT DEFAULT 'pending' CHECK (status IN ('pending', 'active', 'completed', 'cancelled')),
+        started_at DATETIME,
+        completed_at DATETIME,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (player1_id) REFERENCES users (id),
+        FOREIGN KEY (player2_id) REFERENCES users (id)
+      )
+    
+CREATE TABLE tournaments (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        status TEXT DEFAULT 'registration' CHECK (status IN ('registration', 'active', 'completed', 'cancelled')),
+        max_players INTEGER DEFAULT 8,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        started_at DATETIME,
+        completed_at DATETIME
+      )
+    
+CREATE TABLE tournament_players (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        user_id INTEGER NOT NULL,
+        alias TEXT NOT NULL,
+        joined_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        eliminated_at DATETIME,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (user_id) REFERENCES users (id),
+        UNIQUE(tournament_id, user_id),
+        UNIQUE(tournament_id, alias)
+      )
+    
+CREATE TABLE tournament_matches (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tournament_id INTEGER NOT NULL,
+        round INTEGER NOT NULL,
+        match_order INTEGER NOT NULL,
+        player1_id INTEGER,
+        player2_id INTEGER,
+        game_id INTEGER,
+        winner_id INTEGER,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (tournament_id) REFERENCES tournaments (id),
+        FOREIGN KEY (player1_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (player2_id) REFERENCES tournament_players (id),
+        FOREIGN KEY (game_id) REFERENCES games (id),
+        FOREIGN KEY (winner_id) REFERENCES tournament_players (id)
+      )
+    
+CREATE INDEX idx_games_player1 ON games (player1_id);
+CREATE INDEX idx_games_player2 ON games (player2_id);
+CREATE INDEX idx_games_status ON games (status);
+CREATE INDEX idx_tournament_players_tournament ON tournament_players (tournament_id);
+CREATE INDEX idx_tournament_matches_tournament ON tournament_matches (tournament_id);
+CREATE INDEX idx_users_username ON users (username);
+CREATE INDEX idx_users_email ON users (email);
+CREATE TRIGGER update_users_updated_at
+      AFTER UPDATE ON users
+      FOR EACH ROW
+      BEGIN
+        UPDATE users SET updated_at = CURRENT_TIMESTAMP WHERE id = NEW.id;
+      END;
+✓ Initial schema created successfully
+
+            INSERT INTO migrations (version, name) VALUES (1.0, 'initial_schema')
+          
+✓ Migration 1 completed
+COMMIT
+✓ All migrations completed successfully
+
+      INSERT INTO users (username, email, password_hash)
+      VALUES ('safetest', 'safe@example.com', '$2b$10$VsScfQgDjaw2hBeCjEqJ1u0Et'/*+28 bytes*/)
+    
+SELECT * FROM users WHERE id = 1.0
+    # Subtest: should return safe user data without password hash
+        ok 1 - Safe user data should be returned
+        ok 2 - Username should be present
+        ok 3 - Email should be present
+        ok 4 - Password hash should be removed
+        1..4
+    ok 6 - should return safe user data without password hash # time=44.589ms
+    
+    1..6
+ok 1 - Users Repository # time=411.657ms
+
+1..1

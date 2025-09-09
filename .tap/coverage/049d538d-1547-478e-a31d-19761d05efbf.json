@@ -1,0 +1,700 @@
+{
+  "result": [
+    {
+      "scriptId": "638",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/connection.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 1490,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "DatabaseConnection",
+          "ranges": [
+            {
+              "startOffset": 130,
+              "endOffset": 199,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "connect",
+          "ranges": [
+            {
+              "startOffset": 203,
+              "endOffset": 818,
+              "count": 3
+            },
+            {
+              "startOffset": 253,
+              "endOffset": 282,
+              "count": 0
+            },
+            {
+              "startOffset": 371,
+              "endOffset": 398,
+              "count": 0
+            },
+            {
+              "startOffset": 507,
+              "endOffset": 562,
+              "count": 0
+            },
+            {
+              "startOffset": 672,
+              "endOffset": 678,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getDefaultPath",
+          "ranges": [
+            {
+              "startOffset": 822,
+              "endOffset": 968,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "close",
+          "ranges": [
+            {
+              "startOffset": 972,
+              "endOffset": 1107,
+              "count": 3
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getDatabase",
+          "ranges": [
+            {
+              "startOffset": 1111,
+              "endOffset": 1257,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "transaction",
+          "ranges": [
+            {
+              "startOffset": 1285,
+              "endOffset": 1386,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "652",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/index.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 734,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "RepositoryFactory",
+          "ranges": [
+            {
+              "startOffset": 173,
+              "endOffset": 290,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get users",
+          "ranges": [
+            {
+              "startOffset": 294,
+              "endOffset": 415,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get games",
+          "ranges": [
+            {
+              "startOffset": 419,
+              "endOffset": 540,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get tournaments",
+          "ranges": [
+            {
+              "startOffset": 544,
+              "endOffset": 695,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "653",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/users.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 2414,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "UsersRepository",
+          "ranges": [
+            {
+              "startOffset": 126,
+              "endOffset": 171,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "createUser",
+          "ranges": [
+            {
+              "startOffset": 175,
+              "endOffset": 470,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "findByUsername",
+          "ranges": [
+            {
+              "startOffset": 474,
+              "endOffset": 611,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "findByEmail",
+          "ranges": [
+            {
+              "startOffset": 615,
+              "endOffset": 740,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "validatePassword",
+          "ranges": [
+            {
+              "startOffset": 744,
+              "endOffset": 851,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "authenticate",
+          "ranges": [
+            {
+              "startOffset": 855,
+              "endOffset": 1128,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getUserStats",
+          "ranges": [
+            {
+              "startOffset": 1132,
+              "endOffset": 1755,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getRecentGames",
+          "ranges": [
+            {
+              "startOffset": 1759,
+              "endOffset": 2202,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getSafeUser",
+          "ranges": [
+            {
+              "startOffset": 2251,
+              "endOffset": 2377,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "654",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/base.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 1641,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "BaseRepository",
+          "ranges": [
+            {
+              "startOffset": 25,
+              "endOffset": 107,
+              "count": 3
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "findById",
+          "ranges": [
+            {
+              "startOffset": 111,
+              "endOffset": 236,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "findAll",
+          "ranges": [
+            {
+              "startOffset": 240,
+              "endOffset": 359,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "create",
+          "ranges": [
+            {
+              "startOffset": 363,
+              "endOffset": 754,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "update",
+          "ranges": [
+            {
+              "startOffset": 758,
+              "endOffset": 1161,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "delete",
+          "ranges": [
+            {
+              "startOffset": 1165,
+              "endOffset": 1325,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "count",
+          "ranges": [
+            {
+              "startOffset": 1329,
+              "endOffset": 1456,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "exists",
+          "ranges": [
+            {
+              "startOffset": 1460,
+              "endOffset": 1605,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "659",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/games.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 3032,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "GamesRepository",
+          "ranges": [
+            {
+              "startOffset": 92,
+              "endOffset": 137,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "createGame",
+          "ranges": [
+            {
+              "startOffset": 141,
+              "endOffset": 294,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "startGame",
+          "ranges": [
+            {
+              "startOffset": 298,
+              "endOffset": 429,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "completeGame",
+          "ranges": [
+            {
+              "startOffset": 433,
+              "endOffset": 670,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "cancelGame",
+          "ranges": [
+            {
+              "startOffset": 674,
+              "endOffset": 765,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getGameWithPlayers",
+          "ranges": [
+            {
+              "startOffset": 769,
+              "endOffset": 1114,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getActiveGames",
+          "ranges": [
+            {
+              "startOffset": 1118,
+              "endOffset": 1491,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getPendingGames",
+          "ranges": [
+            {
+              "startOffset": 1495,
+              "endOffset": 1870,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getPlayerGames",
+          "ranges": [
+            {
+              "startOffset": 1874,
+              "endOffset": 2469,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getGameWinner",
+          "ranges": [
+            {
+              "startOffset": 2473,
+              "endOffset": 2828,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "updateScore",
+          "ranges": [
+            {
+              "startOffset": 2832,
+              "endOffset": 2995,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "660",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/tournaments.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 6744,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "TournamentsRepository",
+          "ranges": [
+            {
+              "startOffset": 98,
+              "endOffset": 149,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "createTournament",
+          "ranges": [
+            {
+              "startOffset": 153,
+              "endOffset": 302,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "startTournament",
+          "ranges": [
+            {
+              "startOffset": 306,
+              "endOffset": 455,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "completeTournament",
+          "ranges": [
+            {
+              "startOffset": 459,
+              "endOffset": 616,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "addPlayer",
+          "ranges": [
+            {
+              "startOffset": 620,
+              "endOffset": 1134,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "removePlayer",
+          "ranges": [
+            {
+              "startOffset": 1138,
+              "endOffset": 1392,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getTournamentPlayers",
+          "ranges": [
+            {
+              "startOffset": 1396,
+              "endOffset": 1700,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getTournamentWithPlayers",
+          "ranges": [
+            {
+              "startOffset": 1704,
+              "endOffset": 1928,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "createMatch",
+          "ranges": [
+            {
+              "startOffset": 1932,
+              "endOffset": 2415,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "updateMatch",
+          "ranges": [
+            {
+              "startOffset": 2419,
+              "endOffset": 2975,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getTournamentMatches",
+          "ranges": [
+            {
+              "startOffset": 2979,
+              "endOffset": 3823,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "generateBracket",
+          "ranges": [
+            {
+              "startOffset": 3827,
+              "endOffset": 5260,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "advanceWinner",
+          "ranges": [
+            {
+              "startOffset": 5264,
+              "endOffset": 6197,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getTournamentWinner",
+          "ranges": [
+            {
+              "startOffset": 6201,
+              "endOffset": 6701,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ],
+  "timestamp": 397765.491121,
+  "source-map-cache": {}
+}

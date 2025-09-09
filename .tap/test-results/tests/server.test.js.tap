@@ -1,0 +1,145 @@
+TAP version 14
+PRAGMA foreign_keys = ON
+# Subtest: Server Integration
+    # Subtest: should respond to health check
+        ok 1 - Status should be 200
+        ok 2 - Should return hello world
+        ok 3 - Database should be connected
+        ok 4 - Should include timestamp
+        1..4
+    ok 1 - should respond to health check # time=25.976ms
+    
+    # Subtest: should respond to database status
+        not ok 1 - Status should be 200
+          ---
+          compare: ===
+          at:
+            fileName: tests/server.test.js
+            lineNumber: 63
+            columnNumber: 7
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/server.test.js:63:7)
+          source: |2
+                });
+          
+                t.equal(response.statusCode, 200, 'Status should be 200');
+            ------^
+          
+                const payload = JSON.parse(response.payload);
+          diff: |
+            --- expected
+            +++ actual
+            @@ -1,1 +1,1 @@
+            -200
+            +500
+          ...
+        
+        not ok 2 - Status should be connected
+          ---
+          compare: ===
+          at:
+            fileName: tests/server.test.js
+            lineNumber: 66
+            columnNumber: 7
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/server.test.js:66:7)
+          source: >2
+          
+                const payload = JSON.parse(response.payload);
+                t.equal(payload.status, 'connected', 'Status should be connected');
+            ------^
+                t.ok(payload.counts, 'Should include counts');
+                t.equal(typeof payload.counts.users, 'number', 'Users count should be a number');
+          diff: |
+            --- expected
+            +++ actual
+            @@ -1,1 +1,1 @@
+            -connected
+            +undefined
+          ...
+        
+        not ok 3 - Should include counts
+          ---
+          at:
+            fileName: tests/server.test.js
+            lineNumber: 67
+            columnNumber: 7
+            typeName: Test
+          stack: |
+            Test.<anonymous> (tests/server.test.js:67:7)
+          source: >2
+                const payload = JSON.parse(response.payload);
+                t.equal(payload.status, 'connected', 'Status should be connected');
+                t.ok(payload.counts, 'Should include counts');
+            ------^
+                t.equal(typeof payload.counts.users, 'number', 'Users count should be a number');
+                t.equal(typeof payload.counts.games, 'number', 'Games count should be a number');
+          ...
+        
+        not ok 4 - Cannot read properties of undefined (reading 'users')
+          ---
+          stack: |
+            Test.<anonymous> (tests/server.test.js:68:35)
+          at:
+            fileName: tests/server.test.js
+            lineNumber: 68
+            columnNumber: 35
+            typeName: Test
+            methodName: <anonymous>
+            functionName: Test.<anonymous>
+          type: TypeError
+          tapCaught: returnedPromiseRejection
+          source: >2
+                t.equal(payload.status, 'connected', 'Status should be connected');
+                t.ok(payload.counts, 'Should include counts');
+                t.equal(typeof payload.counts.users, 'number', 'Users count should be a number');
+            ----------------------------------^
+                t.equal(typeof payload.counts.games, 'number', 'Games count should be a number');
+                t.equal(typeof payload.counts.tournaments, 'number', 'Tournaments count should be a number');
+          ...
+        
+        1..4
+    not ok 2 - should respond to database status # time=20.828ms
+      ---
+      at:
+        fileName: tests/server.test.js
+        lineNumber: 57
+        columnNumber: 5
+        typeName: Test
+      source: |2
+          });
+      
+          t.test('should respond to database status', async (t) => {
+        ----^
+            const response = await app.inject({
+              method: 'GET',
+      ...
+    
+    # Subtest: should have database and repositories available
+        ok 1 - Database should be available
+        ok 2 - Repositories should be available
+        ok 3 - Users repository should be available
+        ok 4 - Games repository should be available
+        ok 5 - Tournaments repository should be available
+        1..5
+    ok 3 - should have database and repositories available # time=0.591ms
+    
+    1..3
+not ok 1 - Server Integration # time=63.111ms
+  ---
+  at:
+    fileName: tests/server.test.js
+    lineNumber: 38
+    columnNumber: 5
+    typeName: Object
+  source: |
+    }
+  
+    tap.test('Server Integration', async (t) => {
+    ----^
+      const app = await buildServer();
+  ...
+
+1..1

@@ -1,0 +1,257 @@
+{
+  "date": "2025-09-09T14:18:06.867Z",
+  "argv": [
+    "/nfs/homes/josfelip/.nvm/versions/node/v22.14.0/bin/node",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/tests/server.test.js"
+  ],
+  "execArgv": [
+    "--import=file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/typescript/dist/esm/import.mjs",
+    "--import=file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/import.mjs",
+    "--enable-source-maps",
+    "--import=file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/processinfo/dist/esm/import.mjs"
+  ],
+  "NODE_OPTIONS": "\"--import=file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/processinfo/dist/esm/import.mjs\"",
+  "cwd": "/nfs/homes/josfelip/Projects/web-major-backend-using-framework",
+  "pid": 821789,
+  "ppid": 821777,
+  "parent": null,
+  "uuid": "f96f68e1-f4ce-4caa-bbeb-7257ca071f59",
+  "files": [
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/tests/server.test.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/typescript/dist/esm/import.mjs",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/ts-node-temp-fork-for-pr-2009/import.mjs",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/ts-node-temp-fork-for-pr-2009/import-loader.mjs",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/import.mjs",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/mock-service.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/is-relative-require.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/export-line.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/munge-mocks.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/resolve-mock-entry-point.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/service-key.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-all-conditional-values.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-all-conditions.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-all-exports.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-all-local-imports.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-conditional-value.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-import.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/is-windows.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/call-site-like.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/require-resolve.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/star-glob.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/to-path.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-conditional-values-list.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/errors.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-named-exports-list.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/read-pkg.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-export.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/file-exists.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/find-dep-package.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/to-file-url.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-dependency-export.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-package-import.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/parse.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/find-star-match.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/walk-up-path/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/read-json.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/glob.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/has-magic.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/ignore.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/brace-expansion/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/assert-valid-pattern.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/ast.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/escape.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/unescape.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/pattern.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/path-scurry/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/walker.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/balanced-match/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/brace-expressions.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/path-scurry/node_modules/lru-cache/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minipass/dist/esm/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/processor.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/loader.mjs",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/hooks.mjs",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/mock-service-client.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/plugins/database.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/connection.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/index.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/users.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/base.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/games.js",
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/tournaments.js"
+  ],
+  "sources": {
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/typescript/dist/esm/import.mjs": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/typescript/src/import.mts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/import.mjs": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/src/import.mts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/mock-service.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/src/mock-service.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/is-relative-require.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/is-relative-require.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/export-line.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/src/export-line.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/munge-mocks.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/src/munge-mocks.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/resolve-mock-entry-point.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/src/resolve-mock-entry-point.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/dist/esm/service-key.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/mock/src/service-key.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-all-conditional-values.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/get-all-conditional-values.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-all-conditions.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/get-all-conditions.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-unique-condition-sets.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/get-unique-condition-sets.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-all-exports.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/resolve-all-exports.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-all-local-imports.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/resolve-all-local-imports.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-conditional-value.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/resolve-conditional-value.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-import.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/resolve-import.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/is-windows.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/is-windows.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/call-site-like.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/src/call-site-like.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/require-resolve.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/src/require-resolve.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/star-glob.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/star-glob.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/to-path.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/to-path.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-conditional-values-list.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/get-conditional-values-list.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/errors.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/errors.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/get-named-exports-list.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/get-named-exports-list.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/read-pkg.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/read-pkg.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-export.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/resolve-export.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/file-exists.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/file-exists.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/find-dep-package.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/find-dep-package.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/to-file-url.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/to-file-url.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-dependency-export.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/resolve-dependency-export.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/resolve-package-import.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/resolve-package-import.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/dist/esm/parse.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@tapjs/stack/src/parse.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/find-star-match.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/find-star-match.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/walk-up-path/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/walk-up-path/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/dist/esm/read-json.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/resolve-import/src/read-json.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/glob.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/src/glob.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/has-magic.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/src/has-magic.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/ignore.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/src/ignore.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/brace-expansion/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/brace-expansion/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/assert-valid-pattern.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/src/assert-valid-pattern.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/ast.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/src/ast.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/escape.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/src/escape.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/unescape.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/src/unescape.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/pattern.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/src/pattern.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/path-scurry/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/path-scurry/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/walker.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/src/walker.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/balanced-match/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/@isaacs/balanced-match/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/dist/esm/brace-expressions.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minimatch/src/brace-expressions.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/path-scurry/node_modules/lru-cache/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/path-scurry/node_modules/lru-cache/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minipass/dist/esm/index.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/minipass/src/index.ts"
+    ],
+    "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/dist/esm/processor.js": [
+      "/nfs/homes/josfelip/Projects/web-major-backend-using-framework/node_modules/glob/src/processor.ts"
+    ]
+  },
+  "root": "f96f68e1-f4ce-4caa-bbeb-7257ca071f59",
+  "externalID": "tests/server.test.js",
+  "code": 1,
+  "signal": null,
+  "runtime": 629.449535
+}

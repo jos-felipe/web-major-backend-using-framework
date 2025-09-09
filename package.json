@@ -6,12 +6,23 @@
   "scripts": {
     "start": "node index.js",
     "dev": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap tests/**/*.test.js",
+    "db:migrate": "node src/database/migrate.js up",
+    "db:rollback": "node src/database/migrate.js down",
+    "db:status": "node src/database/migrate.js status",
+    "db:reset": "node src/database/migrate.js reset",
+    "db:test": "NODE_ENV=test npm run db:migrate && node -e \"console.log('Database connectivity test passed')\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^5.5.0"
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^12.2.0",
+    "fastify": "^5.5.0",
+    "fastify-plugin": "^5.0.1"
+  },
+  "devDependencies": {
+    "tap": "^21.1.0"
   }
 }

@@ -11,3 +11,7 @@ dist/
 build/
 .DS_Store
 *.log
+en.subject*
+data/
+*.db
+*.db-journal

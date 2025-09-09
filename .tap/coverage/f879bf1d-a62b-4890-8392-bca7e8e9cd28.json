@@ -1,0 +1,585 @@
+{
+  "result": [
+    {
+      "scriptId": "639",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/connection.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 1490,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "DatabaseConnection",
+          "ranges": [
+            {
+              "startOffset": 130,
+              "endOffset": 199,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "connect",
+          "ranges": [
+            {
+              "startOffset": 203,
+              "endOffset": 818,
+              "count": 18
+            },
+            {
+              "startOffset": 253,
+              "endOffset": 282,
+              "count": 12
+            },
+            {
+              "startOffset": 282,
+              "endOffset": 337,
+              "count": 6
+            },
+            {
+              "startOffset": 371,
+              "endOffset": 398,
+              "count": 0
+            },
+            {
+              "startOffset": 507,
+              "endOffset": 562,
+              "count": 0
+            },
+            {
+              "startOffset": 562,
+              "endOffset": 679,
+              "count": 6
+            },
+            {
+              "startOffset": 672,
+              "endOffset": 678,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getDefaultPath",
+          "ranges": [
+            {
+              "startOffset": 822,
+              "endOffset": 968,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "close",
+          "ranges": [
+            {
+              "startOffset": 972,
+              "endOffset": 1107,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getDatabase",
+          "ranges": [
+            {
+              "startOffset": 1111,
+              "endOffset": 1257,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "transaction",
+          "ranges": [
+            {
+              "startOffset": 1285,
+              "endOffset": 1386,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "653",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/users.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 2414,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "UsersRepository",
+          "ranges": [
+            {
+              "startOffset": 126,
+              "endOffset": 171,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "createUser",
+          "ranges": [
+            {
+              "startOffset": 175,
+              "endOffset": 470,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "findByUsername",
+          "ranges": [
+            {
+              "startOffset": 474,
+              "endOffset": 611,
+              "count": 3
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "findByEmail",
+          "ranges": [
+            {
+              "startOffset": 615,
+              "endOffset": 740,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "validatePassword",
+          "ranges": [
+            {
+              "startOffset": 744,
+              "endOffset": 851,
+              "count": 2
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "authenticate",
+          "ranges": [
+            {
+              "startOffset": 855,
+              "endOffset": 1128,
+              "count": 2
+            },
+            {
+              "startOffset": 943,
+              "endOffset": 972,
+              "count": 0
+            },
+            {
+              "startOffset": 994,
+              "endOffset": 1020,
+              "count": 0
+            },
+            {
+              "startOffset": 1110,
+              "endOffset": 1116,
+              "count": 1
+            },
+            {
+              "startOffset": 1117,
+              "endOffset": 1123,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getUserStats",
+          "ranges": [
+            {
+              "startOffset": 1132,
+              "endOffset": 1755,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getRecentGames",
+          "ranges": [
+            {
+              "startOffset": 1759,
+              "endOffset": 2202,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getSafeUser",
+          "ranges": [
+            {
+              "startOffset": 2251,
+              "endOffset": 2377,
+              "count": 1
+            },
+            {
+              "startOffset": 2286,
+              "endOffset": 2298,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "654",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/repositories/base.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 1641,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "BaseRepository",
+          "ranges": [
+            {
+              "startOffset": 25,
+              "endOffset": 107,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "findById",
+          "ranges": [
+            {
+              "startOffset": 111,
+              "endOffset": 236,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "findAll",
+          "ranges": [
+            {
+              "startOffset": 240,
+              "endOffset": 359,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "create",
+          "ranges": [
+            {
+              "startOffset": 363,
+              "endOffset": 754,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 454,
+              "endOffset": 463,
+              "count": 18
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "update",
+          "ranges": [
+            {
+              "startOffset": 758,
+              "endOffset": 1161,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "delete",
+          "ranges": [
+            {
+              "startOffset": 1165,
+              "endOffset": 1325,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "count",
+          "ranges": [
+            {
+              "startOffset": 1329,
+              "endOffset": 1456,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "exists",
+          "ranges": [
+            {
+              "startOffset": 1460,
+              "endOffset": 1605,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "659",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/migrations/runner.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 4124,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "MigrationRunner",
+          "ranges": [
+            {
+              "startOffset": 130,
+              "endOffset": 205,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "init",
+          "ranges": [
+            {
+              "startOffset": 209,
+              "endOffset": 299,
+              "count": 12
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "createMigrationsTable",
+          "ranges": [
+            {
+              "startOffset": 303,
+              "endOffset": 532,
+              "count": 12
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getAppliedMigrations",
+          "ranges": [
+            {
+              "startOffset": 536,
+              "endOffset": 678,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getMigrationFiles",
+          "ranges": [
+            {
+              "startOffset": 682,
+              "endOffset": 1016,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 771,
+              "endOffset": 823,
+              "count": 12
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 866,
+              "endOffset": 1010,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "runMigrations",
+          "ranges": [
+            {
+              "startOffset": 1020,
+              "endOffset": 2498,
+              "count": 6
+            },
+            {
+              "startOffset": 1542,
+              "endOffset": 1609,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 1219,
+              "endOffset": 1233,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 1448,
+              "endOffset": 1489,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 1742,
+              "endOffset": 2408,
+              "count": 6
+            },
+            {
+              "startOffset": 2262,
+              "endOffset": 2394,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "rollbackMigration",
+          "ranges": [
+            {
+              "startOffset": 2502,
+              "endOffset": 3500,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getStatus",
+          "ranges": [
+            {
+              "startOffset": 3504,
+              "endOffset": 4087,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "662",
+      "url": "file:///nfs/homes/josfelip/Projects/web-major-backend-using-framework/src/database/migrations/001_initial_schema.js",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 4112,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "up",
+          "ranges": [
+            {
+              "startOffset": 69,
+              "endOffset": 3620,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "down",
+          "ranges": [
+            {
+              "startOffset": 3631,
+              "endOffset": 4080,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ],
+  "timestamp": 397765.884237,
+  "source-map-cache": {}
+}
