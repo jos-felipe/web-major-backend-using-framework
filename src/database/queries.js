@@ -15,14 +15,13 @@ class DatabaseQueries {
       `);
       
       stmt.run([username, email, passwordHash], function(err) {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve({ id: this.lastID, username, email });
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -34,14 +33,13 @@ class DatabaseQueries {
       `);
       
       stmt.get([username], (err, row) => {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve(row);
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -53,14 +51,13 @@ class DatabaseQueries {
       `);
       
       stmt.get([email], (err, row) => {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve(row);
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -72,14 +69,13 @@ class DatabaseQueries {
       `);
       
       stmt.get([id], (err, row) => {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve(row);
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -91,14 +87,13 @@ class DatabaseQueries {
       `);
       
       stmt.run([name, maxParticipants], function(err) {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve({ id: this.lastID, name, maxParticipants, status: 'pending' });
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -110,14 +105,13 @@ class DatabaseQueries {
       `);
       
       stmt.get([id], (err, row) => {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve(row);
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -144,14 +138,13 @@ class DatabaseQueries {
       `);
       
       stmt.run([tournamentId, userId], function(err) {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve({ tournamentId, userId, joinedAt: new Date().toISOString() });
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -181,6 +174,7 @@ class DatabaseQueries {
       `);
       
       stmt.run([tournamentId, player1Id, player2Id], function(err) {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
@@ -193,8 +187,6 @@ class DatabaseQueries {
           });
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -208,14 +200,13 @@ class DatabaseQueries {
       `);
       
       stmt.run([winnerId, scoreP1, scoreP2, gameId], function(err) {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve({ gameId, winnerId, scoreP1, scoreP2 });
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -234,14 +225,13 @@ class DatabaseQueries {
       `);
       
       stmt.get([id], (err, row) => {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve(row);
         }
       });
-      
-      stmt.finalize();
     });
   }
 
@@ -253,14 +243,13 @@ class DatabaseQueries {
       `);
       
       stmt.run([userId, gameId, result, scoreFor, scoreAgainst], function(err) {
+        stmt.finalize();
         if (err) {
           reject(err);
         } else {
           resolve({ id: this.lastID, userId, gameId, result });
         }
       });
-      
-      stmt.finalize();
     });
   }
 
